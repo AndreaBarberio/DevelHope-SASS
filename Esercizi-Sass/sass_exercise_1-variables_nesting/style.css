@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+div {
+  width: 200vh;
+  height: 20vh;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  border: 1px solid red;
+}
+div h1 {
+  color: green;
+  border-bottom: 1px solid blue;
+}
+div section {
+  margin: 10px;
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 10px;
+}
+div section p {
+  height: 160%;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid green;
+  overflow: scroll;
+}
+div section .blue {
+  color: blue;
+}
+div section .red {
+  color: red;
+}
+div section ::-webkit-scrollbar {
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=style.css.map */

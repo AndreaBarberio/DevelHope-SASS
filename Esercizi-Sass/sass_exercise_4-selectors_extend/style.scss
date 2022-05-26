@@ -1,0 +1,79 @@
+@use 'measures'as m;
+@use 'colors'as c;
+@use 'functions'as f;
+
+%heading {
+
+    text-align: center;
+    width: 25%;
+    color: c.$green;
+    margin-bottom: f.convert(10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin secondOne ($color, $border-color, $font-size:1rem) {
+    color: $color;
+    border: f.convert(1) solid;
+    border-color: $border-color;
+    font-size: $font-size;
+    padding: m.$padding;
+    text-align: center;
+}
+
+div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border: f.convert(1) solid c.$red;
+    margin: f.convert(10);
+    padding: f.convert(10);
+
+    h1 {
+        @extend %heading;
+        border-bottom: f.convert(1) solid blue;
+    }
+
+    h2 {
+        @extend %heading;
+        padding: 1rem;
+        border: m.$border c.$red;
+
+    }
+
+    section {
+        display: flex;
+
+        article {
+
+
+            &:nth-child(1) {
+                @include secondOne(c.$blue, c.$green, );
+            }
+
+            &:nth-child(2) {
+                @include secondOne(c.$red, c.$green, );
+            }
+
+            &:nth-child(3) {
+                @include secondOne(c.$blue, c.$green, );
+            }
+
+            &:nth-child(4) {
+                @include secondOne(c.$red, c.$green);
+            }
+        }
+    }
+
+    footer {
+        @include secondOne (c.$green, c.$blue, 24px);
+        width: m.$w;
+        height: m.$w;
+        text-align: center;
+        margin: m.$margin;
+        padding: m.$footerPadding;
+    }
+}

@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+$border: 1px solid;
+$green: green;
+$red: red;
+$blue: blue;
+$w: 100%;
+$padding: 15px 0px;
+$margin: 10px 0px;
+$fontSize: 1rem;
+
+// @mixin article {
+//     width: $w;
+//     margin: $margin;
+//     border: $border $green
+//     padding: $padding;
+//     font-size: $fontSize;
+// }
+
+@mixin secondOne ($color, $border-color, $font-size:1rem) {
+    color: $color;
+    border: 1px solid;
+    border-color: $border-color;
+    font-size: $font-size;
+    
+    padding: $padding;
+    text-align: center;
+}
+
+div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border: 1px solid red;
+    margin: 10px;
+    padding: 10px;
+
+    h1 {
+        border-bottom: 1px solid blue;
+        text-align: center;
+        width: 25%;
+        color: $green;
+        margin-bottom: 10px;
+    }
+
+    section {
+        display: flex;
+
+        article {
+            
+
+            &:nth-child(1) {
+                @include secondOne($blue, $green, );
+            }
+
+            &:nth-child(2) {
+                @include secondOne($red, $green, );
+            }
+
+            &:nth-child(3) {
+                @include secondOne($blue, $green, );
+            }
+
+            &:nth-child(4) {
+                @include secondOne($red, $green, );
+            }
+        }
+    }
+
+    footer {
+        @include secondOne ($green, $blue, 24px);
+        width: $w;
+        height: $w;
+        text-align: center;
+        margin: $margin;
+        padding: $padding;
+
+
+    }
+}

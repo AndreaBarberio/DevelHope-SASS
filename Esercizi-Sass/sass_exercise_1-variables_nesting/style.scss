@@ -1,0 +1,58 @@
+$color-primary: red;
+$color-secondary: blue;
+$color-tertiary: green;
+$border: 1px solid;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+div {
+    width: 200vh;
+    height: 20vh;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    border: $border $color-primary;
+
+    h1 {
+        color: $color-tertiary;
+        border-bottom: $border $color-secondary;
+    }
+
+    section {
+        margin: 10px;
+        height: 30%;
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        margin: 10px;
+
+        p {
+            height: 160%;
+            text-align: center;
+            padding: 10px;
+            border: $border $color-tertiary;
+            overflow: scroll;
+        }
+.blue {
+    color: $color-secondary;
+}
+.red {
+    color: $color-primary;
+}
+        ::-webkit-scrollbar {
+            overflow: hidden;
+        }
+    }
+}
